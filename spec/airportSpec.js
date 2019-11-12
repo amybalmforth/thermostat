@@ -65,4 +65,20 @@ describe('Airport', function() {
     expect(airport.land(plane)).toEqual(plane);
   });
 
-})
+  it('instructs a plane to take off', function() {
+    expect(airport.takeOff(plane)).toEqual(plane);
+  });
+
+  it('knows its capacity', function() {
+    expect(airport.capacity).toEqual(2);
+  });
+
+  it('throws an error if trying to land a plane when at capacity', function() {
+    airport.land(plane);
+    airport.land(plane);
+    expect(airport.land(plane)).toThrowError("cannot land the plane: airport at capacity!");
+  });
+
+
+
+});

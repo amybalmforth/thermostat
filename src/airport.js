@@ -35,12 +35,25 @@ function Plane() {
 };
 
 function Airport() {
+  this.capacity = 2;
+};
+
+Airport.prototype.full = function() {
+  planes.length >= airport.capacity
 };
 Airport.prototype.land = function(plane) {
+  planes.push(plane);
+  return plane;
+};
+Airport.prototype.takeOff = function(plane) {
+  planes.pop();
   return plane;
 };
 
+
 var airport = new Airport();
 var plane = new Plane();
+var planes = []
 
 airport.land(plane);
+airport.takeOff(plane);
