@@ -37,9 +37,9 @@ function Plane() {
 function Airport() {
   this.capacity = 2;
 };
-
-Airport.prototype.full = function() {
+Airport.prototype.isFull = function() {
   planes.length >= airport.capacity
+  throw "cannot land the plane: airport at capacity!";
 };
 Airport.prototype.land = function(plane) {
   planes.push(plane);
@@ -49,7 +49,6 @@ Airport.prototype.takeOff = function(plane) {
   planes.pop();
   return plane;
 };
-
 
 var airport = new Airport();
 var plane = new Plane();

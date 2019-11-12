@@ -74,11 +74,7 @@ describe('Airport', function() {
   });
 
   it('throws an error if trying to land a plane when at capacity', function() {
-    airport.land(plane);
-    airport.land(plane);
-    expect(airport.land(plane)).toThrowError("cannot land the plane: airport at capacity!");
+    expect(airport.isFull).toThrow("cannot land the plane: airport at capacity!");
   });
-
-
 
 });
