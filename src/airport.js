@@ -29,3 +29,18 @@
 //     @planes.length >= @capacity
 //   end
 // end
+
+function Plane() {
+
+};
+
+function Airport() {
+};
+Airport.prototype.land = function(plane) {
+  return plane;
+};
+
+var airport = new Airport();
+var plane = new Plane();
+
+airport.land(plane);
