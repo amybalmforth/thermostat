@@ -33,6 +33,16 @@ describe('Thermo', function() {
     expect(thermo.powerSaving).toEqual(true);
   });
 
+  it('can turn power saving mode on', function(){
+    thermo.turnOnPowerSave();
+    expect(thermo.powerSaving).toEqual(true);
+  })
+
+  it('can turn power saving mode off', function() {
+    thermo.turnOffPowerSave();
+    expect(thermo.powerSaving).toEqual(false);
+  })
+
   it('has max degrees of 25 when powersaving on', function() {
     expect(thermo.MAX_DEGREES).toEqual(25);
   })
@@ -40,6 +50,10 @@ describe('Thermo', function() {
   it('has max degrees of 32 when powersaving off', function() {
     thermo.turnOffPowerSave();
     expect(thermo.MAX_DEGREES).toEqual(32);
+  })
+
+  it('has max degrees of 25 when powersaving on', function() {
+    expect(thermo.MAX_DEGREES).toEqual(25);
   })
 
   it('after resetting temp', function() {

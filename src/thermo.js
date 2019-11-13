@@ -12,10 +12,10 @@ function Thermo() {
 Thermo.prototype.up = function() {
   thermo.degrees += 5;
   if (thermo.degrees > 18) {
-    thermo.energy = 'medium'
-  }
+    thermo.energy = 'medium';
+  };
   if (thermo.degrees > 25) {
-    thermo.energy = 'high'
+    thermo.energy = 'high';
   };
 };
 Thermo.prototype.down = function() {
@@ -24,17 +24,22 @@ Thermo.prototype.down = function() {
   }
   else {
     thermo.degrees -= 5;
-  }
+  };
   if (thermo.degrees < 25) {
-    thermo.energy = 'medium'
-  }
+    thermo.energy = 'medium';
+  };
   if (thermo.degrees < 18) {
-    thermo.energy = 'low'
-  }
+    thermo.energy = 'low';
+  };
 };
 Thermo.prototype.turnOffPowerSave = function() {
+  thermo.powerSaving = false;
   thermo.MAX_DEGREES = 32;
 };
+Thermo.prototype.turnOnPowerSave = function() {
+  thermo.powerSaving = true;
+  thermo.MAX_DEGREES = 25;
+}
 Thermo.prototype.reset = function() {
   thermo.degrees = 20;
 };
