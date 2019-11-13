@@ -61,6 +61,10 @@ describe('Airport', function() {
     plane = new Plane();
   });
 
+  it('has no planes by default', function() {
+    expect(airport.hanger).toEqual([]);
+  });
+
   it('instructs a plane to land', function() {
     expect(airport.land(plane)).toEqual(plane);
   });
@@ -73,8 +77,8 @@ describe('Airport', function() {
     expect(airport.capacity).toEqual(2);
   });
 
-  it('throws an error if trying to land a plane when at capacity', function() {
-    expect(airport.isFull).toThrow("cannot land the plane: airport at capacity!");
+  it('will not let a plane land when at capacity', function() {
+    expect(airport.land(plane)).toEqual("cannot land the plane: airport at capacity!");
   });
 
 });

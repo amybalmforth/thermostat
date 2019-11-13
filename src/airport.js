@@ -36,23 +36,24 @@ function Plane() {
 
 function Airport() {
   this.capacity = 2;
+  this.hanger = [];
 };
 Airport.prototype.isFull = function() {
-  planes.length >= airport.capacity
-  throw "cannot land the plane: airport at capacity!";
+  if (airport.hanger.length >= airport.capacity) {
+    return true;
+  } else {
+    return false;
+  }
 };
 Airport.prototype.land = function(plane) {
-  planes.push(plane);
-  return plane;
+  if (airport.isFull) {
+    return "cannot land the plane: airport at capacity!";
+  } else {
+    airport.hanger.push(plane);
+    return plane;
+  }
 };
 Airport.prototype.takeOff = function(plane) {
-  planes.pop();
+  airport.hanger.pop();
   return plane;
 };
-
-var airport = new Airport();
-var plane = new Plane();
-var planes = []
-
-airport.land(plane);
-airport.takeOff(plane);
