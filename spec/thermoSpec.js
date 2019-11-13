@@ -37,4 +37,9 @@ describe('Thermo', function() {
     expect(thermo.MAX_DEGREES).toEqual(25);
   })
 
+  it('has max degrees of 32 when powersaving off', function() {
+    thermo.turnOffPowerSave();
+    expect(thermo.MAX_DEGREES).toEqual(32);
+  })
+
 });

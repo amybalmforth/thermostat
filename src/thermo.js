@@ -15,3 +15,6 @@ Thermo.prototype.down = function() {
     thermo.degrees -= 5;
   }
 };
+Thermo.prototype.turnOffPowerSave = function() {
+  thermo.MAX_DEGREES = 32;
+};
