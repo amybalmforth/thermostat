@@ -42,4 +42,10 @@ describe('Thermo', function() {
     expect(thermo.MAX_DEGREES).toEqual(32);
   })
 
+  it('after resetting temp', function() {
+    thermo.down();
+    thermo.reset();
+    expect(thermo.degrees).toEqual(20);
+  })
+
 });
