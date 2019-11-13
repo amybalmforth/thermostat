@@ -8,14 +8,24 @@ describe('Thermo', function() {
     expect(thermo.degrees).toEqual(20);
   });
 
-  it('up function raises temp by 1 degree', function() {
-    thermo.up();
-    expect(thermo.degrees).toEqual(21);
+  it('has min temp of 10 degrees', function() {
+    expect(thermo.MIN_DEGREES).toEqual(10);
   });
 
-  it('down function lowers temp by 1 degree', function() {
+  it('up function raises temp by 10 degrees', function() {
+    thermo.up();
+    expect(thermo.degrees).toEqual(30);
+  });
+
+  it('down function lowers temp by 10 degrees', function() {
     thermo.down();
-    expect(thermo.degrees).toEqual(19);
+    expect(thermo.degrees).toEqual(10);
+  });
+
+  it('will not allow temp of lower than 10 degrees', function() {
+    thermo.down();
+    thermo.down();
+    expect(thermo.degrees).toEqual(10);
   });
 
 });

@@ -1,9 +1,15 @@
 function Thermo() {
   this.degrees = 20;
+  this.MIN_DEGREES = 10;
 };
 Thermo.prototype.up = function() {
-  thermo.degrees += 1;
+  thermo.degrees += 10;
 };
 Thermo.prototype.down = function() {
-  thermo.degrees -= 1;
-}
+  if (thermo.degrees === thermo.MIN_DEGREES) {
+    thermo.degrees = 10;
+  }
+  else {
+    thermo.degrees -= 10;
+  }
+};
