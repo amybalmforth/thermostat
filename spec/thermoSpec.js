@@ -48,4 +48,19 @@ describe('Thermo', function() {
     expect(thermo.degrees).toEqual(20);
   })
 
+  it('can advise it has medium energy usage', function() {
+    expect(thermo.energy).toEqual('medium');
+  });
+
+  it('can advise it has high energy usage', function() {
+    thermo.up();
+    thermo.up();
+    expect(thermo.energy).toEqual('high');
+  });
+
+  it('can advise it has low energy usage', function() {
+    thermo.down();
+    expect(thermo.energy).toEqual('low');
+  });
+
 });
