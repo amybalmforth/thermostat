@@ -11,6 +11,9 @@ function Thermo() {
 };
 Thermo.prototype.up = function() {
   thermo.degrees += 5;
+  if (thermo.degrees > 18) {
+    thermo.energy = 'medium'
+  }
   if (thermo.degrees > 25) {
     thermo.energy = 'high'
   };
@@ -21,6 +24,9 @@ Thermo.prototype.down = function() {
   }
   else {
     thermo.degrees -= 5;
+  }
+  if (thermo.degrees < 25) {
+    thermo.energy = 'medium'
   }
   if (thermo.degrees < 18) {
     thermo.energy = 'low'

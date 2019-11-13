@@ -63,4 +63,18 @@ describe('Thermo', function() {
     expect(thermo.energy).toEqual('low');
   });
 
+  it('can advise it is back to medium energy usage after high', function() {
+    thermo.up();
+    thermo.up();
+    thermo.down();
+    thermo.down();
+    expect(thermo.energy).toEqual('medium');
+  });
+
+  it('can advise it is back to medium energy usage after low', function() {
+    thermo.down();
+    thermo.up();
+    expect(thermo.energy).toEqual('medium');
+  })
+
 });
