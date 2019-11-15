@@ -82,6 +82,7 @@ describe('Thermo', function() {
     });
 
     it('can advise it has high energy usage', function() {
+      thermo.turnOffPowerSave();
       thermo.up();
       thermo.up();
       expect(thermo.energy).toEqual('high');
@@ -93,6 +94,7 @@ describe('Thermo', function() {
     });
 
     it('can advise it is back to medium energy usage after high', function() {
+      thermo.turnOffPowerSave();
       thermo.up();
       thermo.up();
       thermo.down();
@@ -115,6 +117,12 @@ describe('Thermo', function() {
       thermo.down();
       thermo.down();
       expect(thermo.degrees).toEqual(10);
+    });
+
+    it('will not allow temp of higher than 25 degrees', function() {
+      thermo.up();
+      thermo.up();
+      expect(thermo.degrees).toEqual(25);
     });
 
   });

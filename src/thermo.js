@@ -6,7 +6,11 @@ function Thermo() {
   this.energy = 'medium';
 };
 Thermo.prototype.up = function() {
-  this.degrees += 5;
+  if (this.degrees === this.MAX_DEGREES) {
+    this.degrees = this.MAX_DEGREES;
+  } else {
+    this.degrees += 5;
+  };
   if (this.degrees > 18) {
     this.energy = 'medium';
   };
