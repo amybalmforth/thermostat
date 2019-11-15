@@ -9,3 +9,13 @@
 .high {
   color: red;
 }
+
+#main {
+  width: 300px;
+  margin: 20px auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: white;
+  border: 2px solid #444444;
+}

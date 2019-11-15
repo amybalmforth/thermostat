@@ -21,8 +21,7 @@ Thermo.prototype.up = function() {
 Thermo.prototype.down = function() {
   if (this.degrees === this.MIN_DEGREES) {
     this.degrees = this.MIN_DEGREES;
-  }
-  else {
+  } else {
     this.degrees -= 1;
   };
   if (this.degrees < 25) {
@@ -44,13 +43,11 @@ Thermo.prototype.reset = function() {
   this.degrees = 20;
 };
 Thermo.prototype.energyUse = function() {
-  if(this.degrees < 18) {
+  if (this.degrees < 18) {
     return 'low';
-  } else if(this.degrees < 25) {
+  } else if (this.degrees < 25) {
     return 'medium';
   } else {
     return 'high';
   };
 };
-
-// 675624cd0bec0fe8c502d1835f796c4f

@@ -1,42 +1,32 @@
 <html>
 <link rel="stylesheet" href="css/style.css">
 <head>
-
   <title>Thermostat</title>
 </head>
-<body bgcolor="lightpink">
-
-
-
-<font face="arial">
-
-<h2 id="temp">Temperature</h2>
-
-<input type="button" id="temp-up" value="+">
-<input type="button" id="temp-down" value="-">
-<input type="button" id="temp-reset" value="Reset">
-
-
-
-<h2>Power Saving Mode is:</h2>
-<h2 id="ps-status">ON</h2>
-<input type="button" id="powersave-on" value="On">
-<input type="button" id="powersave-off" value="Off">
-
-<h2 id="energy">Energy Usage</h2>
-
-<section>
-  <h1>Current temperature: <span id="current-temperature"></span></h1>
-  <select id="current-city">
-    <option value="london">London</option>
-    <option value="new+york">New York</option>
-    <option value="paris">Paris</option>
-    <option value="tokyo">Tokyo</option>
-</section>
-
-  <script src="jquery.js"></script>
-  <script src="interface.js"></script>
-  <script src="src/thermo.js"></script>
-
+<body bgcolor="#666666">
+  <center>
+    <font face="arial" color="#444444">
+      <div id="main">
+        <h3 id="temp">Temperature</h3>
+        <input type="button" id="temp-up" value="+">
+        <input type="button" id="temp-down" value="-">
+        <input type="button" id="temp-reset" value="Reset">
+        <h3>Power Saving Mode is:</h3>
+        <h3 id="ps-status">ON</h3>
+        <input type="button" id="powersave-on" value="On">
+        <input type="button" id="powersave-off" value="Off">
+        <section>
+          <h3>Current temperature: <span id="current-temperature"></span></h3>
+          <select id="current-city">
+            <option value="london">London</option>
+            <option value="new+york">New York</option>
+            <option value="paris">Paris</option>
+            <option value="tokyo">Tokyo</option>
+            <option value="berlin">Berlin</option>
+        </section>
+        <script src="jquery.js"></script>
+        <script src="interface.js"></script>
+        <script src="src/thermo.js"></script>
+      </div>
 </body>
 </html>
