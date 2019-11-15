@@ -35,14 +35,18 @@ describe('Thermo', function() {
       thermo = new Thermo();
     });
 
-    it('up function raises temp by 5 degrees', function() {
+    it('up function raises temp by 1 degrees', function() {
+      thermo.up();
+      thermo.up();
+      thermo.up();
+      thermo.up();
       thermo.up();
       expect(thermo.degrees).toEqual(25);
     });
 
-    it('down function lowers temp by 5 degrees', function() {
+    it('down function lowers temp by 1 degrees', function() {
       thermo.down();
-      expect(thermo.degrees).toEqual(15);
+      expect(thermo.degrees).toEqual(19);
     });
 
     it('after resetting temp', function() {
@@ -85,10 +89,16 @@ describe('Thermo', function() {
       thermo.turnOffPowerSave();
       thermo.up();
       thermo.up();
+      thermo.up();
+      thermo.up();
+      thermo.up();
+      thermo.up();
       expect(thermo.energy).toEqual('high');
     });
 
     it('can advise it has low energy usage', function() {
+      thermo.down();
+      thermo.down();
       thermo.down();
       expect(thermo.energy).toEqual('low');
     });
@@ -116,13 +126,30 @@ describe('Thermo', function() {
       thermo.down();
       thermo.down();
       thermo.down();
+      thermo.down();
+      thermo.down();
+      thermo.down();
+      thermo.down();
+      thermo.down();
+      thermo.down();
+      thermo.down();
+      thermo.down();
       expect(thermo.degrees).toEqual(10);
     });
 
     it('will not allow temp of higher than 25 degrees', function() {
       thermo.up();
       thermo.up();
+      thermo.up();
+      thermo.up();
+      thermo.up();
+      thermo.up();
       expect(thermo.degrees).toEqual(25);
+    });
+
+    it('energyUse', function() {
+      thermo.energyUse();
+      expect(thermo.energyUse()).toEqual('medium');
     });
 
   });

@@ -9,7 +9,7 @@ Thermo.prototype.up = function() {
   if (this.degrees === this.MAX_DEGREES) {
     this.degrees = this.MAX_DEGREES;
   } else {
-    this.degrees += 5;
+    this.degrees += 1;
   };
   if (this.degrees > 18) {
     this.energy = 'medium';
@@ -23,7 +23,7 @@ Thermo.prototype.down = function() {
     this.degrees = this.MIN_DEGREES;
   }
   else {
-    this.degrees -= 5;
+    this.degrees -= 1;
   };
   if (this.degrees < 25) {
     this.energy = 'medium';
@@ -43,3 +43,14 @@ Thermo.prototype.turnOnPowerSave = function() {
 Thermo.prototype.reset = function() {
   this.degrees = 20;
 };
+Thermo.prototype.energyUse = function() {
+  if(this.degrees < 18) {
+    return 'low';
+  } else if(this.degrees < 25) {
+    return 'medium';
+  } else {
+    return 'high';
+  };
+};
+
+// 675624cd0bec0fe8c502d1835f796c4f
